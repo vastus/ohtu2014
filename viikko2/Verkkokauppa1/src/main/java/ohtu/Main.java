@@ -1,13 +1,9 @@
 package ohtu;
 
 import ohtu.verkkokauppa.IPankki;
-import ohtu.verkkokauppa.IVarasto;
-import ohtu.verkkokauppa.IViitegeneraattori;
 import ohtu.verkkokauppa.Kauppa;
 import ohtu.verkkokauppa.Kirjanpito;
 import ohtu.verkkokauppa.Pankki;
-import ohtu.verkkokauppa.Varasto;
-import ohtu.verkkokauppa.Viitegeneraattori;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
@@ -20,6 +16,7 @@ public class Main {
         //IPankki pankki              = new Pankki(kirjanpito);
         //IViitegeneraattori viitegen = new Viitegeneraattori();
         //Kauppa kauppa              = new Kauppa(varasto, pankki, viitegen);
+        IPankki pankki = (Pankki) ctx.getBean("pankki");
         Kirjanpito kirjanpito = (Kirjanpito) ctx.getBean("kirjanpito");
         Kauppa kauppa = (Kauppa) ctx.getBean("kauppa");
 
